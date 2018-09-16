@@ -1,0 +1,39 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <a class="navbar-brand">Router Application</a>
+      <ul class="nav navbar-nav">
+          <li routerLinkActive="active">
+              <a routerLink='/dashboard'>dashboard</a>
+          </li>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <a routerLink='/why'>why Angular</a>
+          </li>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <a routerLink='/employee'>employee</a>
+          </li>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <a routerLink='/leave'>leave</a>
+          </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+          <li *ngIf="isLoggedIn">
+              <a routerLink='/login'><span class="glyphicon glyphicon-user"></span> Welcome {{ userName }}</a>
+          </li>
+
+          <li *ngIf="!isLoggedIn">
+
+              <a routerLink='/login'>Log In</a>
+          </li>
+          <li *ngIf="isLoggedIn">
+              <a (click)="logOut()" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span>Log Out</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+<div class='container' style="width:95% !important">
+  <router-outlet>
+
+
+  </router-outlet>
+</div>

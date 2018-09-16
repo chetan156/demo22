@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <p style="text-align: center;font-size: 21px;font-weight: 700">Employee Portal</p>
+  </div>
+</div>
+ 
+<div class="row">
+    <div class="col-md-1">
+      </div>
+  <div class="col-md-10">
+    <table class="table table-bordered table-responsive table-condensed">
+      <thead>
+        <tr style="background-color: teal;color:white">
+          <th>Sr No</th>
+          <th>Customer Name</th>
+          <th>Address</th>
+          <th>Mobile</th>
+          <th>Occupation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of _ICustomerModelColl ; let i =index">
+          <td style="width:50px">{{i +1}}</td>
+          <td>{{emp.CustomerName}}</td>
+          <td>{{emp.CustomerAddress }}</td>
+          <td>{{emp.CustomerMobile}}</td>
+          <td>{{emp.CustomerOccupation}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
